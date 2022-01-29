@@ -21,10 +21,10 @@ const BookList = () => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error </p>;
     return data.books.map(({ name, id }) => (
-        <div key={id}>
-            <p>
-               {name}
-            </p>
+        <div>
+            <ul>
+                <li key={id}>{name} </li>
+            </ul>
         </div>
     ));
 };
