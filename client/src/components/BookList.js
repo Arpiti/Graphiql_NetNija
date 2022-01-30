@@ -1,18 +1,12 @@
 import React from 'react';
+import { GET_BOOKS_QUERY } from '../queries/queries';
 
 import {
     useQuery,
     gql
 } from "@apollo/client";
 
-const GET_BOOKS_QUERY = gql`
-  {
-      books
-      {
-          name
-          id
-      }
-  }`
+
 
 
 const BookList = () => {
@@ -20,6 +14,7 @@ const BookList = () => {
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error </p>;
+    
     return data.books.map(({ name, id }) => (
         <div>
             <ul>
